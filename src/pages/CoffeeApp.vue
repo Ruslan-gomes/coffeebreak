@@ -67,11 +67,15 @@ main{
 h1{
     color: black;
     padding: 10px;
+    font-size: 50px;
+     -webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: #fff;
 }
 
 p{
     color:black;
     margin: 10px 10px;
+    font-size: 20px;
 }
 
 .coffee-plans{
@@ -82,7 +86,7 @@ p{
 }
 
 .coffee-plans div{
-    color: black;
+    color: #EDEDED;
     margin-bottom: 10px;
 }
 
