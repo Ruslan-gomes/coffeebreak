@@ -1,6 +1,6 @@
 <template>
     <footer class="rodape">
-        <a class="social-link" href="github.com" target="blank">
+        <a class="social-link" href="https://github.com/Ruslan-gomes/coffeebreak" target="blank">
             <img src="../assets/repositorio.jpg" alt="repositório github">
         </a>
     </footer>

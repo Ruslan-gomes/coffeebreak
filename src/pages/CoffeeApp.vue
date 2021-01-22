@@ -7,20 +7,47 @@
             </p>
         </section>
             
-        <section class="coffee-plans">
+        <section class="coffee-plans" v-if="!isPlanoSelecionado.value">
             <div>Escolha seu plano!</div>
             <button class="coffee-btn">Expresso</button>
             <button class="coffee-btn">Mega expresso</button>
             <button class="coffee-btn">Café com leite</button>
 
-            <button class="button is-primary is-rounded">Escolher plano</button>
+            <button @click="selecionarPlano" class="button is-primary is-rounded">Escolher plano</button>
         </section>
+        <coffee-app-plano-selecionado v-if="isPlanoSelecionado.value"/>
     </main>
 </template>
 
 <script>
+
+import CoffeeAppPlanoSelecionado from '../components/CoffeeApp-PlanoSelecionado.vue'
+import sinoPedido from '../assets/sinoPedido.mp3'
+
 export default {
-    name: 'CoffeeApp'
+    name: 'CoffeeApp',
+    components: {
+        CoffeeAppPlanoSelecionado
+    },
+    data(){
+        return{
+            isPlanoSelecionado: {
+                type: 'boolean',
+                value: false
+            }
+        }
+    },
+
+    methods: {
+        selecionarPlano: function(){
+            this.executarSom(sinoPedido);
+            this.isPlanoSelecionado.value = true;
+        },
+        executarSom(arquivoSom){
+            let audio = new Audio(arquivoSom);
+            audio.play();
+        }
+    }
 }
 </script>
 
